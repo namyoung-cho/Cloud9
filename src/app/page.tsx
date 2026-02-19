@@ -1,11 +1,11 @@
 import LoginCard from "@/components/LoginCard";
 
-export default function Page({
-  searchParams
-}: {
-  searchParams?: Record<string, string | string[] | undefined>;
-}) {
-  const sp = searchParams ?? {};
+type PageProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export default async function Page({ searchParams }: PageProps) {
+  const sp = (await searchParams) ?? {};
   const next =
     typeof sp.next === "string" && sp.next.startsWith("/") ? sp.next : "/dashboard";
 
