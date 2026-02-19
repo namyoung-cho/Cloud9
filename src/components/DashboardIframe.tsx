@@ -40,19 +40,17 @@ export default function DashboardIframe({ src, title = "Dashboard" }: Props) {
           ].join(" ")}
           aria-hidden={loaded}
         >
-          <div className="absolute inset-0 relative">
+          <div className="absolute inset-0 relative bg-black">
             <Image
               src="/dashboard-preview.png"
-              alt=""
+              alt="대시보드 미리보기"
               fill
               sizes="100vw"
               priority
-              className="object-cover"
+              className="object-contain"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65" />
-
-          <div className="relative grid h-full place-items-center px-6">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/35 px-6">
             <div className="flex max-w-xl flex-col items-center gap-3 text-center">
               <div className="h-10 w-10 animate-pulse rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur" />
               <p className="text-sm font-semibold tracking-tight text-gray-50 sm:text-base">
