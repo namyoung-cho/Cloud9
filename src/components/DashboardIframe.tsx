@@ -40,11 +40,12 @@ export default function DashboardIframe({ src, title = "Dashboard" }: Props) {
           ].join(" ")}
           aria-hidden={loaded}
         >
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 relative">
             <Image
               src="/dashboard-preview.png"
               alt=""
               fill
+              sizes="100vw"
               priority
               className="object-cover"
             />
